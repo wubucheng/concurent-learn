@@ -21,6 +21,8 @@ public class RecursiveTaskDemo1 extends RecursiveTask<Integer> {
         ForkJoinPool forkJoinPool = new ForkJoinPool();
 //        forkJoinPool.awaitTermination()
         ForkJoinTask<Integer> joinTask = forkJoinPool.submit(recursiveTaskDemo1);
+        joinTask.isCompletedNormally();
+        joinTask.getException();
         System.out.println("joinTask: " + joinTask.get());
     }
 }
